@@ -1,0 +1,9 @@
+#!/bin/bash
+for ip in $(cat ip_list.txt)
+    do 
+        echo "=========================================================="
+        echo "============ nmap scan for $ip-==========================="
+        echo "=========================================================="
+        sudo nmap -A -p- -vv -T4 -oX xml_results/$ip.xml $ip
+        xsltproc xml_results/$ip.xml -o html_results/$ip.html
+    done
