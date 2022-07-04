@@ -2,5 +2,5 @@
 echo "=========================================================="
 echo "============ nmap scan for $1-==========================="
 echo "=========================================================="
-sudo nmap -A -p- -vv -T4 -oX nmap.xml $1
+sudo nmap -A -p- -vv -oX nmap.xml $1
 xsltproc nmap.xml -o nmap.html
